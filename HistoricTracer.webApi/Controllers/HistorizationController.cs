@@ -19,14 +19,14 @@ namespace HistoricTracer.webApi.Controllers
         }
         // GET: api/<HistorizationController>
         [HttpGet]
-        public async Task<IActionResult> Get(string filter, CancellationToken cancellationToken)
+        public async Task<IActionResult> Get(/*string filter,*/CancellationToken cancellationToken)
         {
             var historic = await _historic.GetAllHistoric(cancellationToken);
 
-            if (!string.IsNullOrEmpty(filter))
-            {
-                historic = historic.Where(item => item.CollaboratorName == filter).ToList();
-            }
+            //if (!string.IsNullOrEmpty(filter))
+            //{
+            //    historic = historic.Where(item => item.CollaboratorName == filter).ToList();
+            //}
 
             return Ok(historic);
         }

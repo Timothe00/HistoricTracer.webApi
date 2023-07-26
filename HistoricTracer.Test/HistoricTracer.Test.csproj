@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HistoricTracer.BusinessLogic\HistoricTracer.BusinessLogic.csproj" />
+    <ProjectReference Include="..\HistoricTracer.DataAccess\HistoricTracer.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

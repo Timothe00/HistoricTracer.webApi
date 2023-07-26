@@ -9,13 +9,18 @@ namespace HistoricTracer.BusinessLogic.Services
     {
         private readonly IHistoricRepository _ihistoricRepository;
         private readonly IMongoDatabase _database;
+        private IHistoricRepository @object;
+
         public HistoricService(IMongoDatabase mongoDatabase, IHistoricRepository historicRepository)
         {
             _ihistoricRepository = historicRepository;
             _database = mongoDatabase;
         }
 
-
+        public HistoricService(IHistoricRepository @object)
+        {
+            this.@object = @object;
+        }
 
         public async Task<IEnumerable<HistoricDto>> GetAllHistoric(CancellationToken cancellationToken)
         {
